@@ -1,0 +1,24 @@
+<div id="sidebar_panel" [ngClass]="'overlay' + ((menu.active)? ' active': '')" touchable (singletap)="menu.hideMenu()"></div>
+<div id="sidebar" [ngClass]="(menu.active)? 'active': ''">
+    <div class="account-menu d-flex flex-row text-white v-center p-3">
+        <div class="user-pic d-flex v-center h-center mr-3">
+            <i class="material-icons md-36">account_circle</i>
+        </div>
+        <div class="flex">Chanon Trising</div>
+    </div>
+    <a class="main-menu d-flex flex-row text-white v-center p-3" routerLink="/dashboard" routerLinkActive="active" (click)="menu.hideMenu()">
+        <span class="flex">Dashboard</span>
+    </a>
+    <a class="main-menu d-flex flex-row text-white v-center p-3" routerLink="/product" routerLinkActive="active" (click)="menu.hideMenu()">
+        <span class="flex">Products</span>
+    </a>
+    <a class="main-menu d-flex flex-row text-white v-center p-3" routerLink="/order" routerLinkActive="active" (click)="menu.hideMenu()">
+        <span class="flex">Orders</span>
+    </a>
+    <a class="main-menu d-flex flex-row text-white v-center p-3" (click)="logOut()">
+        <span class="flex">Log Out</span>
+    </a>
+</div>
+<div id="wrapper" class="d-flex">
+    <router-outlet></router-outlet>
+</div>
